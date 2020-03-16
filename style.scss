@@ -1,0 +1,539 @@
+$beige: #b5aa9d;
+$cream: #e0e2db;
+$black: #090307;
+$white: #fff;
+
+$text-dark: rgb(8, 5, 15);
+$text-light: #e0e2db;
+
+$font-primary: 'Lato', serif;
+$font-display: 'Josefin Slab', serif;
+
+// ***** MEDIA BREAKPOINTS ***** //
+$bp-largest: 75em; //1200px
+$bp-large: 62.5em; //1000px
+$bp-medium: 50em; //800px
+$bp-small: 37.5em; //600px
+$bp-xsmall: 25em; //400px
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  @media only screen and (max-width: $bp-medium) {
+    font-size: 56.25%; //1 rem = 9px, 9/16 = 50%
+  }
+  @media only screen and (max-width: $bp-small) {
+    font-size: 50%; //1 rem = 8px, 8/16 = 50%
+  }
+}
+body {
+  box-sizing: border-box;
+  background: $black;
+  font-family: $font-primary;
+  font-weight: 300;
+  color: $cream;
+  line-height: 1.4;
+}
+
+.section {
+  &--top {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.hero {
+  height: 100%;
+  width: 100%;
+  border-radius: 7px;
+  box-shadow: 0px 10px 20px rgba($black, 0.3);
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 7px;
+  object-fit: cover;
+}
+
+.headline {
+  position: absolute;
+  z-index: 1;
+  &--top-main {
+    font-family: $font-display;
+    font-size: 8rem;
+    top: 30%;
+    left: 35%;
+    color: $cream;
+    text-shadow: 0 1rem 1rem rgba($black, 0.5);
+    letter-spacing: 0.3rem;
+    font-weight: 300;
+    @media only screen and (max-width: $bp-large) {
+      font-size: 7rem;
+    }
+    @media only screen and (max-width: $bp-medium) {
+      left: 30%;
+    }
+    @media only screen and (max-width: $bp-small) {
+      left: 26%;
+    }
+    @media only screen and (max-width: $bp-xsmall) {
+      left: 20%;
+    }
+  }
+  &--top-sub {
+    font-family: $font-display;
+    font-size: 5.5rem;
+    top: 40%;
+    left: 48%;
+    color: $cream;
+    text-shadow: 0 1rem 1rem rgba($black, 0.5);
+    letter-spacing: 0.3rem;
+    font-weight: 300;
+
+    @media only screen and (max-width: $bp-large) {
+      font-size: 4.5rem;
+      left: 45%;
+    }
+    @media only screen and (max-width: $bp-small) {
+      left: 41%;
+    }
+    @media only screen and (max-width: $bp-xsmall) {
+      left: 20%;
+    }
+  }
+
+  &--bottom {
+    top: 50%;
+    left: 40%;
+    color: $beige;
+    font-size: 2rem;
+    letter-spacing: 0.3rem;
+    font-weight: 300;
+    line-height: 5px;
+
+    @media only screen and (max-width: $bp-large) {
+      top: 49%;
+    }
+    @media only screen and (max-width: $bp-small) {
+      top: 48%;
+      left: 34%;
+    }
+    @media only screen and (max-width: $bp-xsmall) {
+      left: 20%;
+    }
+  }
+}
+
+/****************** NAVBAR ******************/
+
+.nav-bar {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  top: 0;
+  position: fixed;
+  padding: 1rem;
+  background-color: rgba($beige, 0.2);
+}
+.nav-logo {
+  font-size: 3rem;
+  font-family: $font-display;
+  margin-left: 1.5rem;
+  text-shadow: 0 4px 3px rgba($black, 0.3);
+}
+.nav-bar ul li {
+  display: inline-block;
+  justify-content: flex-end;
+}
+.nav-bar ul li a {
+  color: $cream;
+  font-family: $font-primary;
+  font-size: 1.5rem;
+  text-transform: lowercase;
+  text-decoration: none;
+  margin-right: 3rem;
+  &:hover {
+    color: $beige;
+  }
+  @media only screen and (max-width: $bp-small) {
+    margin-right: 2rem;
+  }
+}
+
+/****************** ABOUT SECTION ******************/
+.about {
+  &__container {
+    display: flex;
+    justify-content: center;
+    height: 55vh;
+    @media only screen and (max-width: $bp-medium) {
+      height: auto;
+    }
+
+    &--box1 {
+      width: 50%;
+      background-color: $cream;
+      color: $black;
+      padding: 6rem;
+      @media only screen and (max-width: $bp-medium) {
+        width: 100%;
+      }
+    }
+    &--box2 {
+      width: 50%;
+      height: auto;
+      background-image: url('/img/square-candy.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      @media only screen and (max-width: $bp-medium) {
+        display: none;
+        visibility: hidden;
+      }
+    }
+    &__header {
+      &--main {
+        font-family: $font-display;
+        font-size: 5rem;
+        font-weight: normal;
+        line-height: 1;
+      }
+      &--sub {
+        font-size: 1.5rem;
+        padding-bottom: 2rem;
+      }
+    }
+  }
+}
+.paragraph {
+  font-size: 1.6rem;
+}
+.arrow {
+  color: $beige;
+  transition: 0.3s ease;
+}
+.bounce {
+  animation: bounce 0.7s infinite alternate;
+}
+@keyframes bounce {
+  from {
+    transform: translateY(-2px);
+  }
+  to {
+    transform: translateY(6px);
+  }
+}
+
+/****************** SHOP SECTION ******************/
+
+.shop {
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    &--box {
+      width: 33.333333%;
+      height: auto;
+      padding: 5rem;
+
+      @media only screen and (max-width: $bp-large) {
+        padding: 2rem 2rem;
+      }
+      @media only screen and (max-width: $bp-medium) {
+        width: 50%;
+      }
+      @media only screen and (max-width: $bp-small) {
+        width: 100%;
+      }
+    }
+    &--1 {
+      background-color: $beige;
+      color: $white;
+    }
+    &--2 {
+      background-color: $cream;
+      color: $beige;
+    }
+    &--3 {
+      background-color: $white;
+      color: $beige;
+    }
+    &--4 {
+      background-color: $white;
+      color: $beige;
+    }
+    &--5 {
+      background-color: $beige;
+      color: $white;
+    }
+    &--6 {
+      background-color: $cream;
+      color: $beige;
+    }
+
+    .header {
+      &__primary {
+        &--main {
+          text-align: center;
+          font-family: $font-primary;
+          font-weight: 300;
+          font-size: 2.5rem;
+        }
+      }
+    }
+
+    &--price {
+      font-size: 1.8rem;
+      text-align: center;
+      padding-bottom: 1.5rem;
+      @media only screen and (max-width: $bp-large) {
+        font-size: 1.5rem;
+      }
+    }
+    &__pic {
+      margin: 0 auto;
+      width: 12rem;
+      height: 12rem;
+      border-radius: 3px;
+      box-shadow: 0 5px 1rem rgba($black, 0.2);
+      background-size: cover;
+
+      @media only screen and (max-width: $bp-large) {
+        width: 9rem;
+        height: 9rem;
+      }
+
+      &--img1 {
+        background-image: url('https://images.unsplash.com/photo-1575377427642-087cf684f29d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80.jpg');
+        background-position: center;
+      }
+      &--img2 {
+        background-image: url('https://images.unsplash.com/photo-1549007994-cb92caebd54b?ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80.jpg');
+        background-position: bottom;
+      }
+      &--img3 {
+        background-image: url('https://images.unsplash.com/photo-1511381939415-e44015466834?ixlib=rb-1.2.1&auto=format&fit=crop&w=838&q=80.jpg');
+      }
+      &--img4 {
+        background-image: url('https://images.unsplash.com/photo-1548741487-18d363dc4469?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80.jpg');
+        background-position: center;
+      }
+      &--img5 {
+        background-image: url('https://cdn.pixabay.com/photo/2016/10/13/11/44/chocolates-1737503_1280.jpg');
+        background-position: left;
+      }
+      &--img6 {
+        background-image: url('/img/choc-bark.png');
+        background-position: center;
+      }
+    }
+    &--detail {
+      text-align: center;
+      padding-top: 2rem;
+      font-size: 1.4rem;
+      line-height: 1.6;
+      padding-bottom: 1rem;
+    }
+  }
+}
+
+/****************** CONTACT SECTION ******************/
+.contact-image {
+  &__container {
+    width: 100%;
+    min-height: 75vh;
+    background-image: url('https://cdn.pixabay.com/photo/2017/08/01/02/10/dark-2562840_1280.jpg');
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+  }
+}
+
+.contact {
+  padding-top: 20%;
+  &__container {
+    background-color: rgba($cream, 0.7);
+    border-radius: 3px;
+    margin: 15% auto;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 6rem 2rem;
+    @media only screen and (max-width: $bp-large) {
+      padding: 4rem 2rem;
+      width: 60%;
+    }
+    @media only screen and (max-width: $bp-medium) {
+      padding: 4rem 2rem;
+      width: 70%;
+    }
+  }
+  &__text {
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: 0.1rem;
+    color: $black;
+    @media only screen and (max-width: $bp-large) {
+      font-size: 1.6rem;
+    }
+  }
+}
+/****************** FORM ******************/
+
+#form {
+  padding-top: 2rem;
+  text-align: center;
+  width: 100%;
+  @media only screen and (max-width: $bp-medium) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+#email {
+  height: 4rem;
+  width: 50%;
+  padding: 1rem;
+  background-color: $cream;
+  border: none;
+  border-bottom: 1px solid $black;
+  border-radius: 3px;
+  transition: 0.2s ease;
+  &:focus {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid $beige;
+    background-color: $white;
+  }
+  &::-webkit-input-placeholder {
+    font-size: 1.3rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: rgba($black, 0.6);
+    font-family: $font-primary;
+    letter-spacing: 1px;
+  }
+  @media only screen and (max-width: $bp-medium) {
+    width: 70%;
+  }
+  @media only screen and (max-width: $bp-small) {
+    width: 80%;
+  }
+}
+
+#submit {
+  height: 4rem;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background-color: $cream;
+  padding: 0.5rem 2rem;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  transition: 0.3s ease;
+  &:hover {
+    background-color: $black;
+    color: $cream;
+  }
+  @media only screen and (max-width: $bp-medium) {
+    margin-top: 1rem;
+  }
+}
+
+/****************** FOOTER SECTION ******************/
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5rem 12rem;
+  @media only screen and (max-width: $bp-large) {
+    padding: 5rem 5rem;
+  }
+  @media only screen and (max-width: $bp-medium) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  @media only screen and (max-width: $bp-xsmall) {
+    padding: 5px;
+  }
+
+  &__nav-list {
+    text-align: right;
+    list-style: none;
+    @media only screen and (max-width: $bp-medium) {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+  &__nav-link {
+    color: $cream;
+    font-size: 1.5rem;
+    @media only screen and (max-width: $bp-medium) {
+      margin-right: 2rem;
+    }
+    @media only screen and (max-width: $bp-xsmall) {
+      font-size: 1rem;
+    }
+  }
+  &__logo {
+    &--main {
+      font-family: $font-display;
+      font-size: 5rem;
+      font-weight: normal;
+      line-height: 1;
+    }
+    &--sub {
+      font-size: 1.5rem;
+      text-align: center;
+      @media only screen and (max-width: $bp-medium) {
+        margin-bottom: 3rem;
+      }
+    }
+  }
+  &__copyright {
+    padding-top: 2rem;
+    font-size: 1.3rem;
+    @media only screen and (max-width: $bp-medium) {
+      text-align: center;
+    }
+  }
+}
+
+.social-link,
+a {
+  color: $cream;
+  text-decoration: none;
+  font-size: 3rem;
+  display: inline-block;
+  transition: 0.2s ease;
+  &:not(:last-child) {
+    padding-right: 2rem;
+  }
+  &:hover {
+    color: $beige;
+  }
+  @media only screen and (max-width: $bp-large) {
+    font-size: 2.5rem;
+  }
+  @media only screen and (max-width: $bp-medium) {
+    margin-bottom: 1rem;
+  }
+}
