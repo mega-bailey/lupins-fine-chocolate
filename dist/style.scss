@@ -194,7 +194,7 @@ body {
     &--box2 {
       width: 50%;
       height: auto;
-      background-image: url('/img/square-candy.png');
+      background-image: url('../img/square-candy.png');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -337,7 +337,7 @@ body {
         background-position: left;
       }
       &--img6 {
-        background-image: url('/img/choc-bark.png');
+        background-image: url('../img/choc-bark.png');
         background-position: center;
       }
     }
